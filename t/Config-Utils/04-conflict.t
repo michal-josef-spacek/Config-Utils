@@ -1,3 +1,7 @@
+# Pragmas.
+use strict;
+use warnings;
+
 # Modules.
 use Cnf::Utils qw(conflict);
 use English qw(-no_match_vars);
