@@ -3,6 +3,7 @@ use Cnf::Utils qw(conflict);
 use English qw(-no_match_vars);
 use Test::More 'tests' => 2;
 
+# Test.
 my $self = {
 	'stack' => [],
 };
@@ -11,6 +12,7 @@ eval {
 };
 is($EVAL_ERROR, '');
 
+# Test.
 $self->{'set_conflicts'} = 1;
 eval {
 	conflict($self, {'key' => 'value'}, 'key');
