@@ -3,7 +3,6 @@ use Cnf::Utils qw(conflict);
 use English qw(-no_match_vars);
 use Test::More 'tests' => 2;
 
-print "Testing: conflict().\n";
 my $self = {
 	'stack' => [],
 };

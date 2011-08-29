@@ -3,7 +3,6 @@ use Cnf::Utils qw(hash);
 use English qw(-no_match_vars);
 use Test::More 'tests' => 8;
 
-print "Testing: hash().\n";
 my $self = {
 	'config' => {},
 	'stack' => [],
