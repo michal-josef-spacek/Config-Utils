@@ -88,6 +88,9 @@ TODO
  conflict():
          Conflict in '%s'.
 
+ hash():
+         Conflict in '%s'.
+
 =head1 EXAMPLE
 
  TODO
