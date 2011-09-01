@@ -27,8 +27,8 @@ sub conflict {
 
 # Create record to hash.
 sub hash {
-	my ($self, $key_array_ref, $val) = @_;
-	my @tmp = @{$key_array_ref};
+	my ($self, $key_ar, $val) = @_;
+	my @tmp = @{$key_ar};
 	my $tmp = $self->{'config'};
 	foreach my $i (0 .. $#tmp) {
 		if ($i != $#tmp) {
@@ -78,7 +78,7 @@ Config::Utils - Common config utilities.
 
  Check conflits.
 
-=item B<hash($self, $key_array_ref, $val)>
+=item B<hash($self, $key_ar, $val)>
 
  Create record to hash.
 
