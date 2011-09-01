@@ -63,23 +63,24 @@ __END__
 
 =head1 NAME
 
-Config::Utils - TODO
+Config::Utils - Common config utilities.
 
 =head1 SYNOPSIS
 
- TODO
+ conflict();
+ hash();
 
 =head1 SUBOUTINES
 
 =over 8
 
-=item B<conflict()>
+=item B<conflict($self, $config, $key)>
 
-TODO
+ Check conflits.
 
-=item B<hash()>
+=item B<hash($self, $key_array_ref, $val)>
 
-TODO
+ Create record to hash.
 
 =back
 
@@ -91,9 +92,37 @@ TODO
  hash():
          Conflict in '%s'.
 
-=head1 EXAMPLE
+=head1 EXAMPLE1
 
- TODO
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Config::Utils qw(conflict);
+
+ # Object.
+ my $self = {
+         'set_conflicts' => 1,
+         'stack' => [],
+ };
+
+ # Conflict.
+ conflict($self, {'key' => 'value'}, 'key');
+
+ # Output:
+ # ERROR: Conflict in 'key'.
+
+=head1 EXAMPLE2
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Config::Utils qw(hash);
+
+ # TODO
 
 =head1 DEPENDENCIES
 
