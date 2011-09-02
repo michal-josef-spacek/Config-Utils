@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 # Modules.
-use Cnf::Utils qw(hash);
+use Config::Utils qw(hash);
 use English qw(-no_match_vars);
 use Test::More 'tests' => 8;
 
