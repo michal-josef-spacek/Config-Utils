@@ -17,8 +17,8 @@ our $VERSION = 0.01;
 
 # Check conflits.
 sub conflict {
-	my ($self, $config, $key) = @_;
-	if ($self->{'set_conflicts'} && exists $config->{$key}) {
+	my ($self, $config_hr, $key) = @_;
+	if ($self->{'set_conflicts'} && exists $config_hr->{$key}) {
 		err 'Conflict in \''.join('.', @{$self->{'stack'}}, $key).
 			'\'.';
 	}
@@ -67,14 +67,15 @@ Config::Utils - Common config utilities.
 
 =head1 SYNOPSIS
 
- conflict();
- hash();
+ use Config::Utils qw(conflict hash);
+ conflict($self, {'key' => 1}, 'key');
+ hash('TODO');
 
 =head1 SUBOUTINES
 
 =over 8
 
-=item B<conflict($self, $config, $key)>
+=item B<conflict($self, $config_hr, $key)>
 
  Check conflits.
 
