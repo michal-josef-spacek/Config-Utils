@@ -13,11 +13,10 @@ name 'Config-Utils';
 requires 'Error::Pure' => 0.05;
 requires 'Exporter' => 0;
 requires 'Readonly' => 0;
-resources 'repository' => {
-	'url' => 'git://github.com/tupinek/Config-Utils',
-	'web' => 'https://github.com/tupinek/Config-Utils',
-	'type' => 'git',
-};
+resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
+	'?Name=Config-Utils';
+resources 'homepage' => 'https://github.com/tupinek/Config-Utils';
+resources 'repository' => 'git://github.com/tupinek/Config-Utils';
 test_requires 'English' => 0;
 test_requires 'File::Object' => 0.03;
 test_requires 'Test::More' => 0;
