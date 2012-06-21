@@ -132,11 +132,7 @@ L<Readonly>.
 
 =head1 SEE ALSO
 
-L<Cnf>,
-L<Cnf::More>,
-L<Cnf::Output>,
-L<Cnf::Reparse>,
-L<Cnf::Uniq>.
+L<Config::Dot>.
 
 =head1 AUTHOR
 
