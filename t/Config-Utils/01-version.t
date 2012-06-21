@@ -7,4 +7,4 @@ use Config::Utils;
 use Test::More 'tests' => 1;
 
 # Test.
-is($Config::Utils::VERSION, 0.01, 'Version.');
+is($Config::Utils::VERSION, 0.02, 'Version.');
