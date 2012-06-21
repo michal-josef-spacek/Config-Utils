@@ -69,7 +69,7 @@ Config::Utils - Common config utilities.
 
  use Config::Utils qw(conflict hash);
  conflict($self, {'key' => 1}, 'key');
- hash('TODO');
+ hash($self, ['one', 'two'], $val);
 
 =head1 SUBOUTINES
 
@@ -78,10 +78,12 @@ Config::Utils - Common config utilities.
 =item B<conflict($self, $config_hr, $key)>
 
  Check conflits.
+ Returns undef or fatal error.
 
 =item B<hash($self, $key_ar, $val)>
 
  Create record to hash.
+ Returns undef or fatal error.
 
 =back
 
@@ -122,8 +124,32 @@ Config::Utils - Common config utilities.
 
  # Modules.
  use Config::Utils qw(hash);
+ use Dumpvalue;
 
- # TODO
+ # Object.
+ my $self = {
+         'config' => {},
+         'set_conflicts' => 1,
+         'stack' => [],
+ };
+
+ # Add records.
+ hash($self, ['foo', 'baz1'], 'bar');
+ hash($self, ['foo', 'baz2'], 'bar');
+
+ # Dump.
+ my $dump = Dumpvalue->new;
+ $dump->dumpValues($self);
+
+ # Output:
+ # 0  HASH(0x955f3c8)
+ #    'config' => HASH(0x955f418)
+ #       'foo' => HASH(0x955f308)
+ #          'baz1' => 'bar'
+ #          'baz2' => 'bar'
+ #    'set_conflicts' => 1
+ #    'stack' => ARRAY(0x955cc38)
+ #         empty array 
 
 =head1 DEPENDENCIES
 
