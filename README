@@ -1,0 +1,95 @@
+NAME
+    Config::Utils - Common config utilities.
+
+SYNOPSIS
+     use Config::Utils qw(conflict hash);
+     conflict($self, {'key' => 1}, 'key');
+     hash($self, ['one', 'two'], $val);
+
+SUBOUTINES
+    conflict($self, $config_hr, $key)
+             Check conflits.
+             Returns undef or fatal error.
+
+    hash($self, $key_ar, $val)
+             Create record to hash.
+             Returns undef or fatal error.
+
+ERRORS
+     conflict():
+             Conflict in '%s'.
+
+     hash():
+             Conflict in '%s'.
+
+EXAMPLE1
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Config::Utils qw(conflict);
+
+     # Object.
+     my $self = {
+             'set_conflicts' => 1,
+             'stack' => [],
+     };
+
+     # Conflict.
+     conflict($self, {'key' => 'value'}, 'key');
+
+     # Output:
+     # ERROR: Conflict in 'key'.
+
+EXAMPLE2
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Config::Utils qw(hash);
+     use Dumpvalue;
+
+     # Object.
+     my $self = {
+             'config' => {},
+             'set_conflicts' => 1,
+             'stack' => [],
+     };
+
+     # Add records.
+     hash($self, ['foo', 'baz1'], 'bar');
+     hash($self, ['foo', 'baz2'], 'bar');
+
+     # Dump.
+     my $dump = Dumpvalue->new;
+     $dump->dumpValues($self);
+
+     # Output:
+     # 0  HASH(0x955f3c8)
+     #    'config' => HASH(0x955f418)
+     #       'foo' => HASH(0x955f308)
+     #          'baz1' => 'bar'
+     #          'baz2' => 'bar'
+     #    'set_conflicts' => 1
+     #    'stack' => ARRAY(0x955cc38)
+     #         empty array
+
+DEPENDENCIES
+    Error::Pure, Readonly.
+
+SEE ALSO
+    Config::Dot.
+
+AUTHOR
+    Michal Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    BSD license.
+
+VERSION
+    0.01
+
