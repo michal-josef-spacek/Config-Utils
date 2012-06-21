@@ -77,7 +77,7 @@ EXAMPLE2
      #         empty array
 
 DEPENDENCIES
-    Error::Pure, Readonly.
+    Error::Pure, Exporter, Readonly.
 
 SEE ALSO
     Config::Dot.

@@ -154,6 +154,7 @@ Config::Utils - Common config utilities.
 =head1 DEPENDENCIES
 
 L<Error::Pure>,
+L<Exporter>,
 L<Readonly>.
 
 =head1 SEE ALSO
