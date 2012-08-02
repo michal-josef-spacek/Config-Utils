@@ -29,23 +29,24 @@ sub conflict {
 sub hash {
 	my ($self, $key_ar, $val) = @_;
 	my @tmp = @{$key_ar};
-	my $tmp = $self->{'config'};
+	my $tmp_hr = $self->{'config'};
 	foreach my $i (0 .. $#tmp) {
 		if ($i != $#tmp) {
-			if (! exists $tmp->{$tmp[$i]}) {
-				$tmp->{$tmp[$i]} = {};
-			} elsif (ref $tmp->{$tmp[$i]} ne 'HASH') {
-				conflict($self, $tmp, $tmp[$i]);
-				$tmp->{$tmp[$i]} = {};
+			if (! exists $tmp_hr->{$tmp[$i]}) {
+				$tmp_hr->{$tmp[$i]} = {};
+			} elsif (ref $tmp_hr->{$tmp[$i]} ne 'HASH') {
+				conflict($self, $tmp_hr, $tmp[$i]);
+				$tmp_hr->{$tmp[$i]} = {};
 			}
-			$tmp = $tmp->{$tmp[$i]};
+			$tmp_hr = $tmp_hr->{$tmp[$i]};
 			push @{$self->{'stack'}}, $tmp[$i];
 		} else {
-			conflict($self, $tmp, $tmp[$i]);
+			conflict($self, $tmp_hr, $tmp[$i]);
 			if (defined $self->{'callback'}) {
-				$tmp->{$tmp[$i]} = $self->{'callback'}->($val);
+				$tmp_hr->{$tmp[$i]}
+					= $self->{'callback'}->($val);
 			} else {
-				$tmp->{$tmp[$i]} = $val;
+				$tmp_hr->{$tmp[$i]} = $val;
 			}
 			$self->{'stack'} = [];
 		}
