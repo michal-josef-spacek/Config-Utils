@@ -1,4 +1,6 @@
 0.02
+- Add hash_array() subroutine.
+- Code optimalization.
 
 0.01 (June 22, 2012)
 - First version.
