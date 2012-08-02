@@ -5,7 +5,7 @@ use warnings;
 # Modules.
 use Config::Utils qw(hash);
 use English qw(-no_match_vars);
-use Test::More 'tests' => 8;
+use Test::More 'tests' => 11;
 
 # Test.
 my $self = {
@@ -22,7 +22,19 @@ $self = {
 };
 hash($self, ['key', 'subkey'], 'val');
 is(ref $self->{'config'}->{'key'}, 'HASH');
-is($self->{'config'}->{'key'}->{'subkey'}, 'val');
+is($self->{'config'}->{'key'}->{'subkey'}, 'val', 'Initialization is {}.');
+
+# Test.
+$self = {
+	'config' => {
+		'key' => {},
+	},
+	'stack' => [],
+};
+hash($self, ['key', 'subkey'], 'val');
+is(ref $self->{'config'}->{'key'}, 'HASH');
+is($self->{'config'}->{'key'}->{'subkey'}, 'val',
+	'Initialization is key => {}.');
 
 # Test.
 $self = {
@@ -72,3 +84,16 @@ eval {
 	hash($self, ['key', 'subkey'], 'val');
 };
 is($EVAL_ERROR, "Conflict in 'key'.\n");
+
+# Test.
+$self = {
+	'callback' => sub {
+		return 1;
+	},
+	'config' => {},
+	'set_conflicts' => 1,
+	'stack' => [],
+};
+hash($self, ['key'], 'value');
+is($self->{'config'}->{'key'}, '1', 'Callback test.');
+
