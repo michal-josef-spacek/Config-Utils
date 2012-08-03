@@ -42,14 +42,19 @@ sub hash {
 			push @{$self->{'stack'}}, $tmp[$i];
 		} else {
 			conflict($self, $tmp_hr, $tmp[$i]);
+
+			# Process callback.
 			if (defined $self->{'callback'}) {
-				$tmp_hr->{$tmp[$i]}
-					= $self->{'callback'}->(
+				my $tmp_val = $self->{'callback'}->(
 					[@{$self->{'stack'}}, $tmp[$i]],
 					$val);
-			} else {
-				$tmp_hr->{$tmp[$i]} = $val;
+				$val = $tmp_val;
 			}
+
+			# Add value.
+			$tmp_hr->{$tmp[$i]} = $val;
+
+			# Clean.
 			$self->{'stack'} = [];
 		}
 	}
@@ -72,21 +77,26 @@ sub hash_array {
 			$tmp_hr = $tmp_hr->{$tmp[$i]};
 			push @{$self->{'stack'}}, $tmp[$i];
 		} else {
+
+			# Process callback.
 			if (defined $self->{'callback'}) {
-				$tmp_hr->{$tmp[$i]}
-					= $self->{'callback'}->(
+				my $tmp_val = $self->{'callback'}->(
 					[@{$self->{'stack'}}, $tmp[$i]],
 					$val);
-			} else {
-				if (ref $tmp_hr->{$tmp[$i]} eq 'ARRAY') {
-					push @{$tmp_hr->{$tmp[$i]}}, $val;
-				} elsif ($tmp_hr->{$tmp[$i]}) {
-					my $foo = $tmp_hr->{$tmp[$i]};
-					$tmp_hr->{$tmp[$i]} = [$foo, $val];
-				} else {
-					$tmp_hr->{$tmp[$i]} = $val;
-				}
+				$val = $tmp_val;
 			}
+
+			# Add value.
+			if (ref $tmp_hr->{$tmp[$i]} eq 'ARRAY') {
+				push @{$tmp_hr->{$tmp[$i]}}, $val;
+			} elsif ($tmp_hr->{$tmp[$i]}) {
+				my $foo = $tmp_hr->{$tmp[$i]};
+				$tmp_hr->{$tmp[$i]} = [$foo, $val];
+			} else {
+				$tmp_hr->{$tmp[$i]} = $val;
+			}
+
+			# Clean.
 			$self->{'stack'} = [];
 		}
 	}

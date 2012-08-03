@@ -5,7 +5,7 @@ use warnings;
 # Modules.
 use Config::Utils qw(hash_array);
 use English qw(-no_match_vars);
-use Test::More 'tests' => 11;
+use Test::More 'tests' => 12;
 
 # Test.
 my $self = {
@@ -104,5 +104,29 @@ $self = {
 	'stack' => [],
 };
 hash_array($self, ['key'], 'value');
-is($self->{'config'}->{'key'}, '1', 'Callback test.');
+is_deeply(
+	$self->{'config'},
+	{
+		'key' => 1,
+	},
+	'Callback test.',
+);
 
+# Test.
+$self = {
+	'callback' => sub {
+		return 1;
+	},
+	'config' => {},
+	'set_conflicts' => 1,
+	'stack' => [],
+};
+hash_array($self, ['key'], 'value');
+hash_array($self, ['key'], 'value');
+is_deeply(
+	$self->{'config'},
+	{
+		'key' => [1, 1],
+	},
+	'Callback test. Multiple values.',
+);
