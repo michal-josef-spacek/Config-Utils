@@ -44,7 +44,9 @@ sub hash {
 			conflict($self, $tmp_hr, $tmp[$i]);
 			if (defined $self->{'callback'}) {
 				$tmp_hr->{$tmp[$i]}
-					= $self->{'callback'}->($val);
+					= $self->{'callback'}->(
+					[@{$self->{'stack'}}, $tmp[$i]],
+					$val);
 			} else {
 				$tmp_hr->{$tmp[$i]} = $val;
 			}
@@ -72,7 +74,9 @@ sub hash_array {
 		} else {
 			if (defined $self->{'callback'}) {
 				$tmp_hr->{$tmp[$i]}
-					= $self->{'callback'}->($val);
+					= $self->{'callback'}->(
+					[@{$self->{'stack'}}, $tmp[$i]],
+					$val);
 			} else {
 				if (ref $tmp_hr->{$tmp[$i]} eq 'ARRAY') {
 					push @{$tmp_hr->{$tmp[$i]}}, $val;
