@@ -21,5 +21,4 @@ t/Config-Utils/03-pod.t
 t/Config-Utils/04-conflict.t
 t/Config-Utils/05-hash.t
 t/Config-Utils/06-hash_array.t
-TODO
 Utils.pm
