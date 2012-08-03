@@ -1,7 +1,6 @@
 TODO
 ====
 3. Trosku upravit nazvy promennych, je to des.
-4. Priklad s callbackem do doc.
 5.
 
 Applied
@@ -10,4 +9,7 @@ Applied
 OK [20120802] skim
 
 2. Pridat $self definici.
+OK [20120803] skim
+
+4. Priklad s callbackem do doc.
 OK [20120803] skim
