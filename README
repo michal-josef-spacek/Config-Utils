@@ -2,9 +2,10 @@ NAME
     Config::Utils - Common config utilities.
 
 SYNOPSIS
-     use Config::Utils qw(conflict hash);
+     use Config::Utils qw(conflict hash hash_array);
      conflict($self, {'key' => 1}, 'key');
      hash($self, ['one', 'two'], $val);
+     hash_array($self, ['one', 'two'], $val);
 
 SUBOUTINES
     conflict($self, $config_hr, $key)
@@ -15,11 +16,19 @@ SUBOUTINES
              Create record to hash.
              Returns undef or fatal error.
 
+    hash_array($self, $key_ar, $val)
+             Create record to hash.
+             If exists more value record for one key, then create array of values.
+             Returns undef or fatal error.
+
 ERRORS
      conflict():
              Conflict in '%s'.
 
      hash():
+             Conflict in '%s'.
+
+     hash_array():
              Conflict in '%s'.
 
 EXAMPLE1
@@ -74,6 +83,41 @@ EXAMPLE2
      #          'baz2' => 'bar'
      #    'set_conflicts' => 1
      #    'stack' => ARRAY(0x955cc38)
+     #         empty array
+
+EXAMPLE3
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Config::Utils qw(hash_array);
+     use Dumpvalue;
+
+     # Object.
+     my $self = {
+             'config' => {},
+             'set_conflicts' => 1,
+             'stack' => [],
+     };
+
+     # Add records.
+     hash_array($self, ['foo', 'baz'], 'bar');
+     hash_array($self, ['foo', 'baz'], 'bar');
+
+     # Dump.
+     my $dump = Dumpvalue->new;
+     $dump->dumpValues($self);
+
+     # Output:
+     # 0  HASH(0x8edf890)
+     #    'config' => HASH(0x8edf850)
+     #       'foo' => HASH(0x8edf840)
+     #          'baz' => ARRAY(0x8edf6d0)
+     #             0  'bar'
+     #             1  'bar'
+     #    'set_conflicts' => 1
+     #    'stack' => ARRAY(0x8edf6e0)
      #         empty array
 
 DEPENDENCIES
