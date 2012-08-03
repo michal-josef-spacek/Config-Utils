@@ -129,17 +129,28 @@ Config::Utils - Common config utilities.
 =item B<conflict($self, $config_hr, $key)>
 
  Check conflits.
+ Affected variables from $self:
+ - set_conflicts - Flag, then control conflicts.
+ - stack - Reference to array with actual '$key' key position.
  Returns undef or fatal error.
 
 =item B<hash($self, $key_ar, $val)>
 
  Create record to hash.
+ Affected variables from $self:
+ - config - Actual configuration in hash reference.
+ - set_conflicts - Flag, then control conflicts.
+ - stack - Reference to array with actual '$key' key position.
  Returns undef or fatal error.
 
 =item B<hash_array($self, $key_ar, $val)>
 
  Create record to hash.
  If exists more value record for one key, then create array of values.
+ Affected variables from $self:
+ - config - Actual configuration in hash reference.
+ - set_conflicts - Flag, then control conflicts.
+ - stack - Reference to array with actual '$key' key position.
  Returns undef or fatal error.
 
 =back
