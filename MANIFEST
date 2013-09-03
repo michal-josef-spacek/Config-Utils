@@ -1,4 +1,4 @@
-CHANGES
+Changes
 examples/ex1.pl
 examples/ex2.pl
 examples/ex3.pl
@@ -11,6 +11,7 @@ inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
+LICENSE
 Makefile.PL
 MANIFEST			This list of files
 META.yml
