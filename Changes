@@ -1,6 +1,7 @@
 0.04
  - Add LICENSE file.
  - Add Test::NoWarnings to tests.
+ - Add dependency for perl (based on Error::Pure).
  - Add missing example from doc.
  - Rename CHANGES to Changes.
  - Rewrite Changes file to CPAN::Changes::SPEC format.
