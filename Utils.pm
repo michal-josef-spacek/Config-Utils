@@ -128,7 +128,7 @@ Config::Utils - Common config utilities.
 
 =over 8
 
-=item B<conflict($self, $config_hr, $key)>
+=item C<conflict($self, $config_hr, $key)>
 
  Check conflits.
  Affected variables from $self:
@@ -136,7 +136,7 @@ Config::Utils - Common config utilities.
  - stack - Reference to array with actual '$key' key position.
  Returns undef or fatal error.
 
-=item B<hash($self, $key_ar, $val)>
+=item C<hash($self, $key_ar, $val)>
 
  Create record to hash.
  Affected variables from $self:
@@ -145,7 +145,7 @@ Config::Utils - Common config utilities.
  - stack - Reference to array with actual '$key' key position.
  Returns undef or fatal error.
 
-=item B<hash_array($self, $key_ar, $val)>
+=item C<hash_array($self, $key_ar, $val)>
 
  Create record to hash.
  If exists more value record for one key, then create array of values.
