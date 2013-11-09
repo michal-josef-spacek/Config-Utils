@@ -10,6 +10,7 @@ abstract 'Config utilitites.';
 author 'Michal Špaček <skim@cpan.org>';
 license 'bsd';
 name 'Config-Utils';
+readme_from 'Utils.pm';
 requires 'Error::Pure' => 0.09;
 requires 'Exporter' => 0;
 requires 'Readonly' => 0;
