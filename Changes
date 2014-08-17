@@ -2,7 +2,7 @@
  - Add 'readme_from' directive to Makefile.PL.
  - Fix LICENSE file.
  - Rewrite B<> to C<> in doc for code parameters and methods.
- - Update Module::Install to 1.08 version.
+ - Update Module::Install to 1.10 version.
 
 0.04 2013-09-21
  - Add LICENSE file.
