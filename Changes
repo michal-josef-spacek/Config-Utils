@@ -1,4 +1,4 @@
-0.05
+0.05 2014-09-01T00:01:07+02:00
  - Add 'readme_from' directive to Makefile.PL.
  - Fix LICENSE file.
  - Rewrite B<> to C<> in doc for code parameters and methods.
