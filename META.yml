@@ -35,4 +35,4 @@ resources:
   homepage: https://github.com/tupinek/Config-Utils
   license: http://opensource.org/licenses/BSD-3-Clause
   repository: git://github.com/tupinek/Config-Utils
-version: 0.05
+version: 0.06

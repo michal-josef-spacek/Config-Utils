@@ -13,7 +13,7 @@ use Readonly;
 Readonly::Array our @EXPORT_OK => qw(conflict hash hash_array);
 
 # Version.
-our $VERSION = 0.05;
+our $VERSION = 0.06;
 
 # Check conflits.
 sub conflict {
@@ -324,6 +324,6 @@ BSD license.
 
 =head1 VERSION
 
-0.05
+0.06
 
 =cut
