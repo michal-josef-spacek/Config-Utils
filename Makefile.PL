@@ -7,7 +7,7 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'Config utilitites.';
-author 'Michal Špaček <skim@cpan.org>';
+author 'Michal Spacek <skim@cpan.org>';
 license 'bsd';
 name 'Config-Utils';
 readme_from 'Utils.pm';
