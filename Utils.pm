@@ -310,7 +310,8 @@ L<Readonly>.
 
 =head1 SEE ALSO
 
-L<Config::Dot>.
+L<Config::Dot>,
+L<Config::Dot::Array>.
 
 =head1 AUTHOR
 

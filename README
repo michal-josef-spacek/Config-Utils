@@ -176,7 +176,7 @@ DEPENDENCIES
     Error::Pure, Exporter, Readonly.
 
 SEE ALSO
-    Config::Dot.
+    Config::Dot, Config::Dot::Array.
 
 AUTHOR
     Michal Špaček <mailto:skim@cpan.org>
