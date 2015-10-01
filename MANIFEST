@@ -4,6 +4,8 @@ examples/ex2.pl
 examples/ex3.pl
 examples/ex4.pl
 inc/Module/Install.pm
+inc/Module/Install/AuthorRequires.pm
+inc/Module/Install/AuthorTests.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
@@ -18,11 +20,11 @@ MANIFEST			This list of files
 META.yml
 README
 SIGNATURE
-t/Config-Utils/00-use.t
-t/Config-Utils/01-version.t
-t/Config-Utils/02-pod_coverage.t
-t/Config-Utils/03-pod.t
-t/Config-Utils/04-conflict.t
-t/Config-Utils/05-hash.t
-t/Config-Utils/06-hash_array.t
+t/Config-Utils/01-use.t
+t/Config-Utils/02-version.t
+t/Config-Utils/03-conflict.t
+t/Config-Utils/04-hash.t
+t/Config-Utils/05-hash_array.t
 Utils.pm
+xt/Config-Utils/01-pod_coverage.t
+xt/Config-Utils/02-pod.t
