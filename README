@@ -176,7 +176,11 @@ DEPENDENCIES
     Error::Pure, Exporter, Readonly.
 
 SEE ALSO
-    Config::Dot, Config::Dot::Array.
+    Config::Dot
+        Module for simple configure file parsing.
+
+    Config::Dot::Array
+        Module for simple configure file parsing with arrays.
 
 AUTHOR
     Michal Špaček <mailto:skim@cpan.org>

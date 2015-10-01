@@ -310,8 +310,17 @@ L<Readonly>.
 
 =head1 SEE ALSO
 
-L<Config::Dot>,
-L<Config::Dot::Array>.
+=over
+
+=item L<Config::Dot>
+
+Module for simple configure file parsing.
+
+=item L<Config::Dot::Array>
+
+Module for simple configure file parsing with arrays.
+
+=back
 
 =head1 AUTHOR
 
