@@ -1,11 +1,9 @@
 package Config::Utils;
 
-# Pragmas.
 use base qw(Exporter);
 use strict;
 use warnings;
 
-# Modules.
 use Error::Pure qw(err);
 use Readonly;
 
@@ -170,11 +168,9 @@ Config::Utils - Common config utilities.
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Config::Utils qw(conflict);
 
  # Object.
@@ -191,11 +187,9 @@ Config::Utils - Common config utilities.
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Config::Utils qw(hash);
  use Dumpvalue;
 
@@ -226,11 +220,9 @@ Config::Utils - Common config utilities.
 
 =head1 EXAMPLE3
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Config::Utils qw(hash_array);
  use Dumpvalue;
 
@@ -262,11 +254,9 @@ Config::Utils - Common config utilities.
 
 =head1 EXAMPLE4
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Config::Utils qw(hash_array);
  use Dumpvalue;
 

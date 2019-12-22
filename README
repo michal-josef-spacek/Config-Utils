@@ -43,11 +43,9 @@ ERRORS
              Conflict in '%s'.
 
 EXAMPLE1
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Config::Utils qw(conflict);
 
      # Object.
@@ -63,11 +61,9 @@ EXAMPLE1
      # ERROR: Conflict in 'key'.
 
 EXAMPLE2
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Config::Utils qw(hash);
      use Dumpvalue;
 
@@ -97,11 +93,9 @@ EXAMPLE2
      #         empty array
 
 EXAMPLE3
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Config::Utils qw(hash_array);
      use Dumpvalue;
 
@@ -132,11 +126,9 @@ EXAMPLE3
      #         empty array
 
 EXAMPLE4
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Config::Utils qw(hash_array);
      use Dumpvalue;
 
