@@ -128,7 +128,7 @@ Config::Utils - Common config utilities.
 
 =item C<conflict($self, $config_hr, $key)>
 
- Check conflits.
+ Check conflicts.
  Affected variables from $self:
  - set_conflicts - Flag, then control conflicts.
  - stack - Reference to array with actual '$key' key position.
