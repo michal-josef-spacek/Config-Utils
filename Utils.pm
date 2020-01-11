@@ -11,7 +11,7 @@ use Readonly;
 Readonly::Array our @EXPORT_OK => qw(conflict hash hash_array);
 
 # Version.
-our $VERSION = 0.07;
+our $VERSION = 0.08;
 
 # Check conflits.
 sub conflict {
@@ -326,6 +326,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.07
+0.08
 
 =cut

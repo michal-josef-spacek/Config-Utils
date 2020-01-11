@@ -1,3 +1,5 @@
+0.08
+
 0.07 2020-01-12T00:03:27+01:00
  - Fix Makefile.PL fails with no '.' in @INC.
  - Fix doc.
