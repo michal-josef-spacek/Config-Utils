@@ -118,6 +118,7 @@ Config::Utils - Common config utilities.
 =head1 SYNOPSIS
 
  use Config::Utils qw(conflict hash hash_array);
+
  conflict($self, {'key' => 1}, 'key');
  hash($self, ['one', 'two'], $val);
  hash_array($self, ['one', 'two'], $val);
