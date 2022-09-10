@@ -187,6 +187,9 @@ SEE ALSO
     Config::Dot::Array
         Module for simple configure file parsing with arrays.
 
+REPOSITORY
+    <https://github.com/michal-josef-spacek/Config-Utils>
+
 AUTHOR
     Michal Josef Špaček <mailto:skim@cpan.org>
 

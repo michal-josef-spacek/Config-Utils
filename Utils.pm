@@ -331,6 +331,10 @@ Module for simple configure file parsing with arrays.
 
 =back
 
+=head1 REPOSITORY
+
+L<https://github.com/michal-josef-spacek/Config-Utils>
+
 =head1 AUTHOR
 
 Michal Josef Špaček L<mailto:skim@cpan.org>

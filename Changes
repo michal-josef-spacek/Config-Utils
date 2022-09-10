@@ -1,4 +1,5 @@
 0.08
+ - Add REPOSITORY section to doc.
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Rename examples to better names.
  - Rewrite bugtracker to github.
