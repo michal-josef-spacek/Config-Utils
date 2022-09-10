@@ -169,6 +169,8 @@ Config::Utils - Common config utilities.
 
 =head1 EXAMPLE1
 
+=for comment filename=conflict.pl
+
  use strict;
  use warnings;
 
@@ -187,6 +189,8 @@ Config::Utils - Common config utilities.
  # ERROR: Conflict in 'key'.
 
 =head1 EXAMPLE2
+
+=for comment filename=hash.pl
 
  use strict;
  use warnings;
@@ -221,6 +225,8 @@ Config::Utils - Common config utilities.
 
 =head1 EXAMPLE3
 
+=for comment filename=hash_array.pl
+
  use strict;
  use warnings;
 
@@ -254,6 +260,8 @@ Config::Utils - Common config utilities.
  #         empty array
 
 =head1 EXAMPLE4
+
+=for comment filename=hash_array_with_cb.pl
 
  use strict;
  use warnings;
