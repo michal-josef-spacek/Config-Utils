@@ -119,42 +119,52 @@ Config::Utils - Common config utilities.
 
  use Config::Utils qw(conflict hash hash_array);
 
- conflict($self, {'key' => 1}, 'key');
- hash($self, ['one', 'two'], $val);
- hash_array($self, ['one', 'two'], $val);
+ conflict($self, $config_hr, $key);
+ hash($self, $key_ar, $val);
+ hash_array($self, $key_ar, $val);
 
 =head1 SUBOUTINES
 
-=over 8
+=head2 C<conflict>
 
-=item C<conflict($self, $config_hr, $key)>
+ conflict($self, $config_hr, $key);
 
- Check conflicts.
- Affected variables from $self:
+Check conflicts.
+Affected variables from C<$self>:
+
  - set_conflicts - Flag, then control conflicts.
- - stack - Reference to array with actual '$key' key position.
- Returns undef or fatal error.
+ - stack - Reference to array with actual 'C<$key>' key position.
 
-=item C<hash($self, $key_ar, $val)>
+Returns undef or fatal error.
 
- Create record to hash.
- Affected variables from $self:
+=head2 C<hash>
+
+ hash($self, $key_ar, $val);
+
+Create record to hash.
+Affected variables from C<$self>:
+
  - config - Actual configuration in hash reference.
  - set_conflicts - Flag, then control conflicts.
- - stack - Reference to array with actual '$key' key position.
- Returns undef or fatal error.
+ - stack - Reference to array with actual 'C<$key>' key position.
 
-=item C<hash_array($self, $key_ar, $val)>
+Returns undef or fatal error.
 
- Create record to hash.
- If exists more value record for one key, then create array of values.
- Affected variables from $self:
+=head2 C<hash_array>
+
+ hash_array($self, $key_ar, $val);
+
+Create record to hash.
+
+If exists more value record for one key, then create array of values.
+
+Affected variables from C<$self>:
+
  - config - Actual configuration in hash reference.
  - set_conflicts - Flag, then control conflicts.
- - stack - Reference to array with actual '$key' key position.
- Returns undef or fatal error.
+ - stack - Reference to array with actual 'C<$key>' key position.
 
-=back
+Returns undef or fatal error.
 
 =head1 ERRORS
 
